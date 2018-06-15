@@ -1,10 +1,21 @@
-<div class='container-fluid'>
-  <div class='row'>
-    <div class='col-sm-3'>
-      <app-nav-menu></app-nav-menu>
+<div>
+  <div class="header">
+
+    <h1>Hello world</h1>
+    <div class="navbar">
+      <a [routerLink]='["/"]' [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+        Home
+      </a>
+      <a [routerLink]='["/about"]' [routerLinkActive]='["link-active"]'>
+        About
+      </a>
+      <a [routerLink]='["/about"]' [routerLinkActive]='["link-active"]'>
+        Blog
+      </a>
     </div>
-    <div class='col-sm-9 body-content'>
-      <router-outlet></router-outlet>
-    </div>
+</div>
+
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
 </div>

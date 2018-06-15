@@ -1,0 +1,26 @@
+.header {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+
+}
+.navbar {
+  width: 100%;
+  display: flex;
+
+  a {
+    width: 33.3%;
+    height: 100%;
+    background: black;
+  }
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+
+.link-active {
+  color: red;
+}
