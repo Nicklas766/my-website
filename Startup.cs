@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using my_website.Data;
+using Microsoft.EntityFrameworkCore;
 namespace my_website
 {
     public class Startup
@@ -20,6 +22,9 @@ namespace my_website
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BlogContext>(opt =>
+               opt.UseInMemoryDatabase("Blog"));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the Angular files will be served from this directory
