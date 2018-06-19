@@ -21,7 +21,7 @@ namespace XUnitTestProject1
         }
 
         [Fact]
-        public void Test1()
+        public void TestGetall()
         {
             // Arrange
             var controller = new BlogController(_context);
@@ -30,7 +30,7 @@ namespace XUnitTestProject1
             var result = getListResult(controller.GetAll());
 
             // Assert
-            Assert.Equal("yes", result[0].Text);
+            Assert.Equal("Text1", result[0].Text);
         }
     }
 }
