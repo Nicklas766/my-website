@@ -6,7 +6,7 @@ using my_website.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace XUnitTestProject
+namespace XUnitTestProject1
 {
     public class BlogTestBase : IDisposable
     {

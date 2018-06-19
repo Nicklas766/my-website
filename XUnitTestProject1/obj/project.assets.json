@@ -10462,11 +10462,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nicklas\\projects\\app\\XUnitTestProject2\\XUnitTestProject.csproj",
-      "projectName": "XUnitTestProject",
-      "projectPath": "C:\\Users\\Nicklas\\projects\\app\\XUnitTestProject2\\XUnitTestProject.csproj",
+      "projectUniqueName": "C:\\Users\\Nicklas\\projects\\my-website\\XUnitTestProject1\\XUnitTestProject1.csproj",
+      "projectName": "XUnitTestProject1",
+      "projectPath": "C:\\Users\\Nicklas\\projects\\my-website\\XUnitTestProject1\\XUnitTestProject1.csproj",
       "packagesPath": "C:\\Users\\Nicklas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nicklas\\projects\\app\\XUnitTestProject2\\obj\\",
+      "outputPath": "C:\\Users\\Nicklas\\projects\\my-website\\XUnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -10485,8 +10485,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Nicklas\\projects\\app\\my-website\\my-website.csproj": {
-              "projectPath": "C:\\Users\\Nicklas\\projects\\app\\my-website\\my-website.csproj"
+            "C:\\Users\\Nicklas\\projects\\my-website\\my-website\\my-website.csproj": {
+              "projectPath": "C:\\Users\\Nicklas\\projects\\my-website\\my-website\\my-website.csproj"
             }
           }
         }

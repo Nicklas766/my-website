@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace XUnitTestProject
+namespace XUnitTestProject1
 {
     public class BlogControllerTests : BlogTestBase
     {
