@@ -19,18 +19,12 @@ namespace mywebsite.Controllers
         public BlogController(BlogContext context)
         {
             _context = context;
-
-            if (_context.Posts.Count() == 0)
-            {
-                _context.Posts.Add(new Post { Text = "text1" });
-                _context.SaveChanges();
-            }
         }
 
         [HttpGet]
-        public ActionResult<List<Post>> GetAll()
+        public IActionResult GetAll()
         {
-            return _context.Posts.ToList();
+            return Ok(_context.Posts.ToList());
         }
 
         // GET api/values/5
