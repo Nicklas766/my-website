@@ -5,6 +5,7 @@ using my_website.Data;
 using my_website.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace XUnitTestProject1
 {
@@ -15,15 +16,21 @@ namespace XUnitTestProject1
 
         public BlogTestBase()
         {
+
+            var serviceProvider = new ServiceCollection()
+                .AddEntityFrameworkInMemoryDatabase()
+                .BuildServiceProvider();
+
             var options = new DbContextOptionsBuilder<BlogContext>()
-                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                .UseInMemoryDatabase()
+                .UseInternalServiceProvider(serviceProvider)
                 .Options;
 
             _context = new BlogContext(options);
 
             _context.Database.EnsureCreated();
 
-            _context.Posts.Add(new Post { Text = "Text1", Slug = "my-slug-1" });
+            _context.Add(new Post { Text = "Text1", Slug = "my-slug-1" });
             _context.SaveChanges();
         }
 

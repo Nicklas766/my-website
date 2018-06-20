@@ -28,15 +28,22 @@ namespace mywebsite.Controllers
             return Ok(_context.Posts.ToList());
         }
 
+
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult GetBySlug(string slug)
         {
-            return "value";
+            Post post = _context.Posts.FirstOrDefault(curPost => curPost.Slug == slug);
+
+            if (post == null)
+                return StatusCode(404);
+
+            return Ok(post);
         }
 
-        public class PostBody
+        public class CreateAndUpdateBody
         {
+            public int? id;
             public string title;
             public string slug;
             public string text;
@@ -44,7 +51,7 @@ namespace mywebsite.Controllers
 
         // POST api/values
         [HttpPost]
-        public IActionResult Create([FromBody]PostBody body)
+        public IActionResult Create([FromBody]CreateAndUpdateBody body)
         {
             Post post  = new Post();
 
@@ -59,8 +66,20 @@ namespace mywebsite.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Update([FromBody]CreateAndUpdateBody body)
         {
+            Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == body.id);
+
+            if (post == null)
+                return StatusCode(404);
+
+            post.Title = body.title;
+            post.Slug = Post.Slugify(body.slug);
+            post.Text = body.text;
+
+            _context.SaveChanges();
+
+            return Ok(post);
         }
 
         // DELETE api/values/5

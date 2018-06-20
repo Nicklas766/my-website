@@ -34,14 +34,47 @@ namespace XUnitTestProject1
         }
 
         [Fact]
-        public void Test2_Create()
+        public void Test2_GetBySlugSuccess()
+        {
+            // Arrange
+            var controller = new BlogController(_context);
+
+            // Act
+            IActionResult actionResult = controller.GetBySlug("my-slug-1");
+
+            var okObjectResult = Assert.IsType<OkObjectResult>(actionResult);
+            Post post = okObjectResult.Value as Post;
+
+            // Assert
+            Assert.Equal(1, post.ID);
+            Assert.Equal("Text1", post.Text);
+        }
+
+        [Fact]
+        public void Test2_GetBySlugFail()
+        {
+            // Arrange
+            var controller = new BlogController(_context);
+
+            // Act
+            IActionResult actionResult = controller.GetBySlug("this-slug-is-not-in-db");
+
+            var result = Assert.IsType<StatusCodeResult>(actionResult);
+          
+            // Assert
+            Assert.Equal(404, result.StatusCode);
+
+        }
+
+        [Fact]
+        public void Test3_Create()
         {
             // Arrange
             var controller = new BlogController(_context);
 
             // Act
             var result = getListResult(controller.Create(
-                new PostBody {
+                new CreateAndUpdateBody {
                     title = "my title",
                     slug  = "my slug",
                     text  = "my text"
@@ -70,20 +103,51 @@ namespace XUnitTestProject1
             Assert.Equal(200, validStatusCode.StatusCode);
         }
 
-        //[Fact]
-        //// Should change Post.IsDeleted to true
-        //public void Test4_Update()
-        //{
-        //    // Arrange
-        //    var controller = new BlogController(_context);
+        [Fact]
+        // Should change post.text to "im changed", regarding post with id 1
+        public void Test4_UpdateSuccess()
+        {
+            // Arrange
+            var controller = new BlogController(_context);
 
-        //    // Act
-        //    var invalidStatusCode = controller.Delete(100000000);
-        //    var validStatusCode = controller.Delete(1);
+            // Act
+            IActionResult actionResult = controller.Update(new CreateAndUpdateBody
+            {
+                id = 1,
+                title = "my title",
+                slug = "my slug",
+                text = "im changed"
+            });
 
-        //    // Assert
-        //    Assert.Equal(404, invalidStatusCode.StatusCode);
-        //    Assert.Equal(200, validStatusCode.StatusCode);
-        //}
+            var okObjectResult = Assert.IsType<OkObjectResult>(actionResult);
+            Post updatedPost = okObjectResult.Value as Post;
+
+            // Assert
+            Assert.Equal("im changed", updatedPost.Text);
+            Assert.Equal("my-slug", updatedPost.Slug);
+        }
+
+        [Fact]
+        // Should fail since no post with id 1234 exists
+        public void Test5_UpdateFail()
+        {
+            // Arrange
+            var controller = new BlogController(_context);
+
+            // Act
+            IActionResult actionResult = controller.Update(new CreateAndUpdateBody
+            {
+                id = 1234,
+                title = "my title",
+                slug = "my slug",
+                text = "im changed"
+            });
+
+            var statusCodeResult = Assert.IsType<StatusCodeResult>(actionResult);
+            int? statusCode = statusCodeResult.StatusCode as int?;
+
+            // Assert
+            Assert.Equal(404, statusCode);
+        }
     }
 }
