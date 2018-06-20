@@ -21,7 +21,7 @@ namespace XUnitTestProject1
         }
 
         [Fact]
-        public void TestGetall()
+        public void Test1_GetAll()
         {
             // Arrange
             var controller = new BlogController(_context);
@@ -34,7 +34,7 @@ namespace XUnitTestProject1
         }
 
         [Fact]
-        public void TestPost()
+        public void Test2_Create()
         {
             // Arrange
             var controller = new BlogController(_context);
@@ -43,14 +43,47 @@ namespace XUnitTestProject1
             var result = getListResult(controller.Create(
                 new PostBody {
                     title = "my title",
-                    slug ="my slug",
-                    text ="my text"
+                    slug  = "my slug",
+                    text  = "my text"
                 }));
 
             // Assert
             Assert.Equal("my title", result[1].Title);
             Assert.Equal("my-slug", result[1].Slug);
             Assert.Equal("my text", result[1].Text);
+            Assert.False(result[1].IsDeleted);
         }
+
+        [Fact]
+        // Fails when run in test suite, success when run separately
+        public void Test3_Delete()
+        {
+            // Arrange
+            var controller = new BlogController(_context);
+
+            // Act
+            var invalidStatusCode = controller.Delete(100000000);
+            var validStatusCode = controller.Delete(1);
+
+            // Assert
+            Assert.Equal(404, invalidStatusCode.StatusCode);
+            Assert.Equal(200, validStatusCode.StatusCode);
+        }
+
+        //[Fact]
+        //// Should change Post.IsDeleted to true
+        //public void Test4_Update()
+        //{
+        //    // Arrange
+        //    var controller = new BlogController(_context);
+
+        //    // Act
+        //    var invalidStatusCode = controller.Delete(100000000);
+        //    var validStatusCode = controller.Delete(1);
+
+        //    // Assert
+        //    Assert.Equal(404, invalidStatusCode.StatusCode);
+        //    Assert.Equal(200, validStatusCode.StatusCode);
+        //}
     }
 }

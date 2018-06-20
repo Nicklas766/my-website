@@ -49,7 +49,7 @@ namespace mywebsite.Controllers
             Post post  = new Post();
 
             post.Title = body.title;
-            post.Slug  =  Post.Slugify(body.slug);
+            post.Slug  = Post.Slugify(body.slug);
             post.Text  = body.text;
 
             _context.Add(post);
@@ -64,9 +64,18 @@ namespace mywebsite.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPut("{id}")]
+        public StatusCodeResult Delete(int id)
         {
+            Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == id);
+
+            if (post == null)
+              return StatusCode(404);
+
+            post.IsDeleted = true;
+            _context.SaveChanges();
+
+            return StatusCode(200);
         }
     }
 }

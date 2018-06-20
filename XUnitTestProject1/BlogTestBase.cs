@@ -23,7 +23,7 @@ namespace XUnitTestProject1
 
             _context.Database.EnsureCreated();
 
-            _context.Posts.Add(new Post { Text = "Text1" });
+            _context.Posts.Add(new Post { Text = "Text1", Slug = "my-slug-1" });
             _context.SaveChanges();
         }
 
