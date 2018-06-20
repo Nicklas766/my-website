@@ -35,10 +35,26 @@ namespace mywebsite.Controllers
             return "value";
         }
 
+        public class PostBody
+        {
+            public string title;
+            public string slug;
+            public string text;
+        }
+
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Create([FromBody]PostBody body)
         {
+            Post post  = new Post();
+
+            post.Title = body.title;
+            post.Slug  =  Post.Slugify(body.slug);
+            post.Text  = body.text;
+
+            _context.Add(post);
+            _context.SaveChanges();
+            return GetAll();
         }
 
         // PUT api/values/5

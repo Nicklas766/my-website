@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-
+using static mywebsite.Controllers.BlogController;
 
 namespace XUnitTestProject1
 {
@@ -31,6 +31,26 @@ namespace XUnitTestProject1
 
             // Assert
             Assert.Equal("Text1", result[0].Text);
+        }
+
+        [Fact]
+        public void TestPost()
+        {
+            // Arrange
+            var controller = new BlogController(_context);
+
+            // Act
+            var result = getListResult(controller.Create(
+                new PostBody {
+                    title = "my title",
+                    slug ="my slug",
+                    text ="my text"
+                }));
+
+            // Assert
+            Assert.Equal("my title", result[1].Title);
+            Assert.Equal("my-slug", result[1].Slug);
+            Assert.Equal("my text", result[1].Text);
         }
     }
 }
