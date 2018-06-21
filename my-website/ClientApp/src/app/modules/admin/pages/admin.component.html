@@ -3,6 +3,10 @@
 
 <div *ngIf="!loading">
 <div *ngFor="let post of blogPosts;">
-    <li>{{post.title}}</li>
+    <a (click)="setCurrentBlogPost(post)">{{post.title}}</a>
   </div>
 </div>
+
+<button (click)="setCurrentBlogPost({})">I want to create a new post!</button>  
+
+<app-submit-form *ngIf="currentBlogPost" [blogPost]="currentBlogPost"></app-submit-form>

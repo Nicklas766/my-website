@@ -67,7 +67,7 @@ namespace mywebsite.Controllers
  
             _context.Add(post);
             _context.SaveChanges();
-            return GetAll();
+            return Ok(post);
         }
 
         // PUT api/blog/update
@@ -89,7 +89,7 @@ namespace mywebsite.Controllers
         }
 
         // DELETE api/blog/delete
-        [HttpPut("delete")]
+        [HttpDelete("delete")]
         public StatusCodeResult Delete(int id)
         {
             Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == id);

@@ -6,6 +6,7 @@ import { RouterModule }     from '@angular/router';
 
 // Components, ALPHABETICAL ORDER
 import { AppComponent }   from './app.component';
+import { SubmitFormComponent } from './modules/admin/components/submit-form/submit-form.component';
 
 // Page Components, ALPHABETICAL ORDER
 import { AboutComponent } from './modules/about/pages/about.component';
@@ -21,6 +22,7 @@ import { AdminService }   from './modules/admin/admin.service';
     AboutComponent,
     AdminComponent,
     HomeComponent,
+    SubmitFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

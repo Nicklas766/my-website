@@ -1,0 +1,18 @@
+﻿ 
+  
+
+<li>Id: {{blogPost.id}}</li>
+
+
+<li>Title</li>
+<input [(ngModel)]="blogPost.title"> 
+
+<li>Slug</li>
+<input [(ngModel)]="blogPost.slug"> 
+
+<li>Text</li>
+<textarea placeholder="Please type your text" [(ngModel)]="blogPost.text"></textarea>
+
+<button *ngIf="!blogPost.id" (click)="createPost()">CREATE!</button> 
+<button *ngIf="blogPost.id"  (click)="updatePost()">Update this post</button> 
+<button *ngIf="blogPost.id"  (click)="deletePost()">Delete this post</button>   

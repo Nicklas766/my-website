@@ -68,14 +68,14 @@ namespace XUnitTestProject1
                     Text  = "my text"
                 });
 
-            var objectResult  = Assert.IsType<OkObjectResult>(actionResult);
-            List<Post> result = objectResult.Value as List<Post>;
+            var okObjectResult = Assert.IsType<OkObjectResult>(actionResult);
+            Post createdPost = okObjectResult.Value as Post;
 
             // Assert
-            Assert.Equal("my title", result[1].Title);
-            Assert.Equal("my-slug", result[1].Slug);
-            Assert.Equal("my text", result[1].Text);
-            Assert.False(result[1].IsDeleted);
+            Assert.Equal("my title", createdPost.Title);
+            Assert.Equal("my-slug", createdPost.Slug);
+            Assert.Equal("my text", createdPost.Text);
+            Assert.False(createdPost.IsDeleted);
         }
 
         [Fact]

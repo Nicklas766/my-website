@@ -15,15 +15,17 @@ export class AdminComponent {
   }
     public blogPosts: any;
     public loading: boolean = false;
+    public currentBlogPost: object;
 
     ngOnInit(): void {
-
         this.adminService.getAllBlogPosts().then(res => {
-
             this.blogPosts = res;
             this.loading = false;
-        });
-        this.adminService.getBlogPostBySlug("slug").then(res => console.log(res));
-      
+        });   
+  }
+
+  setCurrentBlogPost(currentBlogPost: object) {
+        console.log(currentBlogPost)
+        this.currentBlogPost = currentBlogPost;
   }
 }
