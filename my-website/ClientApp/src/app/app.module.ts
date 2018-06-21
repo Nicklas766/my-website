@@ -1,16 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { BrowserModule }    from '@angular/platform-browser';
+import { NgModule }         from '@angular/core';
+import { FormsModule }      from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule }     from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
+// Components, ALPHABETICAL ORDER
+import { AppComponent }   from './app.component';
 
+// Page Components, ALPHABETICAL ORDER
+import { AboutComponent } from './modules/about/pages/about.component';
+import { AdminComponent } from './modules/admin/pages/admin.component';
+import { HomeComponent }  from './modules/home/home.component';
 
-import { AdminService } from './services/my.service';
+// Services, ALPHABETICAL
+import { AdminService }   from './modules/admin/admin.service';
 
 @NgModule({
   declarations: [

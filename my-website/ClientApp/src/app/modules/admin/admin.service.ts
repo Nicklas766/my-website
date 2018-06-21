@@ -11,7 +11,12 @@ export class AdminService {
     getAllBlogPosts() {
         return this.http.get('/api/blog/all').toPromise();
     }
-     getBlogPost(slug: string) {
-         return this.http.get('/api/blog/article/' + slug).toPromise();
-        }
+    
+    getBlogPostBySlug(slug: string) {
+        return this.http.get('/api/blog/article/' + slug).toPromise();
+    }
+
+    postCreateBlogPost() {
+        return this.http.get('/api/blog/article/').toPromise();
+    }
 }
