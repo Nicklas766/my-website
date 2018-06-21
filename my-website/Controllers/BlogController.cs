@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using my_website.Data;
 using my_website.Models;
 
@@ -48,29 +49,27 @@ namespace mywebsite.Controllers
             Post post = _context.Posts.FirstOrDefault(curPost => curPost.Slug == slug);
 
             if (post == null)
+            {
                 return StatusCode(404);
-
+            }
+                
             return Ok(post);
         }
 
-        public class CreateAndUpdateBody
-        {
-            public int? id;
-            public string title;
-            public string slug;
-            public string text;
-        }
 
         // POST api/blog/create
         [HttpPost("create")]
         public IActionResult Create([FromBody]CreateAndUpdateBody body)
         {
+            if (body.Slug == null || !ModelState.IsValid)
+            {
+                return StatusCode(404);
+            }
+
             Post post  = new Post();
 
-            post.Title = body.title;
-            post.Slug  = Post.Slugify(body.slug);
-            post.Text  = body.text;
-
+            post.SetAttributes(body);
+ 
             _context.Add(post);
             _context.SaveChanges();
             return GetAll();
@@ -80,14 +79,14 @@ namespace mywebsite.Controllers
         [HttpPut("update")]
         public IActionResult Update([FromBody]CreateAndUpdateBody body)
         {
-            Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == body.id);
+            Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == body.Id);
 
-            if (post == null)
+            if (post == null || !ModelState.IsValid)
+            {
                 return StatusCode(404);
+            }
 
-            post.Title = body.title;
-            post.Slug = Post.Slugify(body.slug);
-            post.Text = body.text;
+            post.SetAttributes(body);
 
             _context.SaveChanges();
 
@@ -101,12 +100,28 @@ namespace mywebsite.Controllers
             Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == id);
 
             if (post == null)
-              return StatusCode(404);
-
+            {
+                return StatusCode(404);
+            }
+              
             post.IsDeleted = true;
             _context.SaveChanges();
 
             return StatusCode(200);
         }
+    }
+
+    public class CreateAndUpdateBody
+    {
+        public int? Id { get; set; }
+
+        [Required]
+        public string Title { get; set; }
+
+        [Required]
+        public string Slug { get; set; }
+
+        [Required]
+        public string Text { get; set; }
     }
 }

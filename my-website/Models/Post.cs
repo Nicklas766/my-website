@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mywebsite.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -17,6 +18,13 @@ namespace my_website.Models
         public bool IsDeleted { get; set; } = false;
         public DateTime PublishDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+
+        public void SetAttributes(CreateAndUpdateBody body)
+        {
+            this.Slug = Slugify(body.Slug);
+            this.Title = body.Title;
+            this.Text = body.Text;
+        }
 
         public static string Slugify(string phrase)
         {
