@@ -1,14 +1,8 @@
-using System;
 using mywebsite.Controllers;
 using Xunit;
-
-using my_website.Data;
 using my_website.Models;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using static mywebsite.Controllers.BlogController;
 
 namespace XUnitTestProject1
 {
