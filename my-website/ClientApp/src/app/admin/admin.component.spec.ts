@@ -1,20 +1,20 @@
 import { TestBed, async, ComponentFixture, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { BrowserModule, By } from "@angular/platform-browser";
-import { AboutComponent } from './about.component';
+import { AdminComponent } from './admin.component';
 
-let component: AboutComponent;
-let fixture: ComponentFixture<AboutComponent>;
+let component: AdminComponent;
+let fixture: ComponentFixture<AdminComponent>;
 
-describe('about component', () => {
+describe('admin component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ AboutComponent ],
+            declarations: [ AdminComponent ],
             imports: [ BrowserModule ],
             providers: [
                 { provide: ComponentFixtureAutoDetect, useValue: true }
             ]
         });
-        fixture = TestBed.createComponent(AboutComponent);
+        fixture = TestBed.createComponent(AdminComponent);
         component = fixture.componentInstance;
     }));
 

@@ -22,15 +22,27 @@ namespace mywebsite.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        // GET api/blog/all
+        [HttpGet("all")]
         public IActionResult GetAll()
         {
+            if (_context.Posts.ToList().Count == 0)
+            {
+                Post post = new Post();
+                post.Title = "title";
+                post.Slug = "slug";
+                post.Text = "text here";
+
+                _context.Add(post);
+                _context.SaveChanges();
+            }
+                
             return Ok(_context.Posts.ToList());
         }
 
 
-        // GET api/values/5
-        [HttpGet("{id}")]
+        // GET api/blog/article/:slug
+        [HttpGet("article/{slug}")]
         public IActionResult GetBySlug(string slug)
         {
             Post post = _context.Posts.FirstOrDefault(curPost => curPost.Slug == slug);
@@ -49,8 +61,8 @@ namespace mywebsite.Controllers
             public string text;
         }
 
-        // POST api/values
-        [HttpPost]
+        // POST api/blog/create
+        [HttpPost("create")]
         public IActionResult Create([FromBody]CreateAndUpdateBody body)
         {
             Post post  = new Post();
@@ -64,8 +76,8 @@ namespace mywebsite.Controllers
             return GetAll();
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
+        // PUT api/blog/update
+        [HttpPut("update")]
         public IActionResult Update([FromBody]CreateAndUpdateBody body)
         {
             Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == body.id);
@@ -82,8 +94,8 @@ namespace mywebsite.Controllers
             return Ok(post);
         }
 
-        // DELETE api/values/5
-        [HttpPut("{id}")]
+        // DELETE api/blog/delete
+        [HttpPut("delete")]
         public StatusCodeResult Delete(int id)
         {
             Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == id);

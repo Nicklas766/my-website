@@ -5,14 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
+
+
+import { AdminService } from './services/my.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     AboutComponent,
+    AdminComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -21,9 +26,12 @@ import { AboutComponent } from './about/about.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
+      { path: 'admin', component: AdminComponent },
     ])
   ],
-  providers: [],
+    providers: [
+        AdminService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

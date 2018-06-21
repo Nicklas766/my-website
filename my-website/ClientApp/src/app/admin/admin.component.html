@@ -1,0 +1,8 @@
+<div style="border: 1px solid red">admin Component</div>
+
+
+<div *ngIf="!loading">
+<div *ngFor="let post of blogPosts;">
+    <li>{{post.title}}</li>
+  </div>
+</div>
