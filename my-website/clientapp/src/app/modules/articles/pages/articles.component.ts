@@ -1,4 +1,5 @@
 ﻿import { Component } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { SharedService } from '../../../shared/shared.service';
 import { Article } from '../../../shared/models/article.model';

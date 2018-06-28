@@ -3,7 +3,7 @@
 
 <div *ngIf="!loading">
 <div *ngFor="let article of articles;">
-    <a>{{article.title}}</a>
+    <a [routerLink]='["/article/" + article.slug]'>{{article.title}}</a>
   </div>
 </div>
 

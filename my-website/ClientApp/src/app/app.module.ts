@@ -12,6 +12,7 @@ import { SubmitFormComponent } from './modules/admin/components/submit-form/subm
 import { AboutComponent } from './modules/about/pages/about.component';
 import { AdminComponent } from './modules/admin/pages/admin.component';
 import { ArticlesComponent } from './modules/articles/pages/articles.component';
+import { ArticleComponent } from './modules/articles/pages/article.component';
 import { HomeComponent }  from './modules/home/home.component';
 
 // Services, ALPHABETICAL
@@ -24,6 +25,7 @@ import { SharedService }   from './shared/shared.service';
     AboutComponent,
     AdminComponent,
     ArticlesComponent,
+    ArticleComponent,
     HomeComponent,
     SubmitFormComponent
   ],
@@ -36,6 +38,7 @@ import { SharedService }   from './shared/shared.service';
       { path: 'about', component: AboutComponent },
       { path: 'admin', component: AdminComponent },
       { path: 'articles', component: ArticlesComponent },
+      { path: 'article/:slug', component: ArticleComponent },
     ])
   ],
     providers: [
