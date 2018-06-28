@@ -10,24 +10,22 @@ import {AcceptableBody} from "../../AcceptableBody.model";
 /** SubmitForm component*/
 export class SubmitFormComponent {
     /** SubmitForm ctor */
-    @Input() blogPost: AcceptableBody;
-    newPost: boolean = false;
+    @Input() article: AcceptableBody;
+    newArticle: boolean = false;
 
-    constructor(private adminService: AdminService) {
+    constructor(private adminService: AdminService) {}
 
-    }
-
-    updatePost() {
-        this.adminService.putUpdateBlogPost(this.blogPost).then(res => {
-            this.blogPost = res;
+    updateArticle() {
+        this.adminService.putUpdateArticle(this.article).then(res => {
+            this.article = res;
         });  
     }
-    createPost() {
-        this.adminService.postCreateBlogPost(this.blogPost).then(res => {
-            this.blogPost = res;
+    createArticle() {
+        this.adminService.postCreateArticle(this.article).then(res => {
+            this.article = res;
         });  
     }
-    deletePost() {
-        this.adminService.putDeleteBlogPost(this.blogPost.id).then(res => console.log(res));  
+    deleteArticle() {
+        this.adminService.putDeleteArticle(this.article.id).then(res => console.log(res));  
     }
 }

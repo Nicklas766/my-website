@@ -1,18 +1,18 @@
 ﻿ 
   
 
-<li>Id: {{blogPost.id}}</li>
+<li>Id: {{article.id}}</li>
 
 
 <li>Title</li>
-<input [(ngModel)]="blogPost.title"> 
+<input [(ngModel)]="article.title"> 
 
 <li>Slug</li>
-<input [(ngModel)]="blogPost.slug"> 
+<input [(ngModel)]="article.slug"> 
 
 <li>Text</li>
-<textarea placeholder="Please type your text" [(ngModel)]="blogPost.text"></textarea>
+<textarea placeholder="Please type your text" [(ngModel)]="article.text"></textarea>
 
-<button *ngIf="!blogPost.id" (click)="createPost()">CREATE!</button> 
-<button *ngIf="blogPost.id"  (click)="updatePost()">Update this post</button> 
-<button *ngIf="blogPost.id"  (click)="deletePost()">Delete this post</button>   
+<button *ngIf="!article.id" (click)="createArticle()">CREATE!</button> 
+<button *ngIf="article.id"  (click)="updateArticle()">Update this Article</button> 
+<button *ngIf="article.id"  (click)="deleteArticle()">Delete this Article</button>   

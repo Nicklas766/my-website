@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { AdminService } from '../admin.service';
 import { SharedService } from '../../../shared/shared.service';
+import { Article } from '../../../shared/models/article.model';
 
 @Component({
     selector: 'app-admin',
@@ -14,22 +15,21 @@ export class AdminComponent {
   constructor(
       private adminService: AdminService,
       private sharedService: SharedService
-    ) {
+    ) { }
 
-  }
-    public blogPosts: any;
+    public articles: Article[];
     public loading: boolean = true;
-    public currentBlogPost: object;
+    public currentArticle: Article;
 
     ngOnInit(): void {
         this.sharedService.getAllArticles().then(res => {
-            this.blogPosts = res;
+            this.articles = res;
             this.loading = false;
         });   
   }
 
-  setCurrentBlogPost(currentBlogPost: object) {
-        console.log(currentBlogPost)
-        this.currentBlogPost = currentBlogPost;
+  setCurrentArticle(currentArticle: Article) {
+        console.log(currentArticle)
+        this.currentArticle = currentArticle;
   }
 }

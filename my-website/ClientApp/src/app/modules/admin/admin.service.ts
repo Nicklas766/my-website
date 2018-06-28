@@ -9,15 +9,15 @@ import {AcceptableBody} from "./AcceptableBody.model";
 export class AdminService {
      constructor(private http: HttpClient) {}
 
-    postCreateBlogPost(body: AcceptableBody): Promise<AcceptableBody> {
+    postCreateArticle(body: AcceptableBody): Promise<AcceptableBody> {
         return this.http.post('/api/blog/create', body).toPromise() as Promise<AcceptableBody>;
     }
 
-    putUpdateBlogPost(body: AcceptableBody): Promise<AcceptableBody> {
+    putUpdateArticle(body: AcceptableBody): Promise<AcceptableBody> {
         return this.http.put('/api/blog/update', body).toPromise() as Promise<AcceptableBody>;
     }
 
-    putDeleteBlogPost(id: number) {
+    putDeleteArticle(id: number) {
         return this.http.delete('/api/blog/delete?id=' + id).toPromise();
     }
 }
