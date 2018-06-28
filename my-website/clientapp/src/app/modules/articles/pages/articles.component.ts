@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
 import { SharedService } from '../../../shared/shared.service';
+import { Article } from '../../../shared/models/article.model';
 
 @Component({
     selector: 'app-articles',
@@ -14,7 +15,7 @@ export class ArticlesComponent {
 
     }
 
-    public blogPosts: any;
+    public blogPosts: Article;
     public loading: boolean = false;
     public currentBlogPost: object;
 }
