@@ -10,12 +10,21 @@ import { Article } from '../../../shared/models/article.model';
 })
 /** articles component*/
 export class ArticlesComponent {
+
+    public articles: Article[];
+    public loading: boolean = true;
+    public currentArticle: Article;
     /** articles ctor */
     constructor(private sharedService: SharedService) {
 
     }
 
-    public blogPosts: Article;
-    public loading: boolean = false;
-    public currentBlogPost: object;
+    ngOnInit(): void {
+        this.sharedService.getAllArticles().then(res => {
+            this.articles = res;
+            this.loading = false;
+        });   
+  }
+
+
 }

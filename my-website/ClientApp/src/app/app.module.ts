@@ -11,16 +11,19 @@ import { SubmitFormComponent } from './modules/admin/components/submit-form/subm
 // Page Components, ALPHABETICAL ORDER
 import { AboutComponent } from './modules/about/pages/about.component';
 import { AdminComponent } from './modules/admin/pages/admin.component';
+import { ArticlesComponent } from './modules/articles/pages/articles.component';
 import { HomeComponent }  from './modules/home/home.component';
 
 // Services, ALPHABETICAL
 import { AdminService }   from './modules/admin/admin.service';
+import { SharedService }   from './shared/shared.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     AdminComponent,
+    ArticlesComponent,
     HomeComponent,
     SubmitFormComponent
   ],
@@ -32,10 +35,12 @@ import { AdminService }   from './modules/admin/admin.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
       { path: 'admin', component: AdminComponent },
+      { path: 'articles', component: ArticlesComponent },
     ])
   ],
     providers: [
-        AdminService
+        AdminService,
+        SharedService
     ],
   bootstrap: [AppComponent]
 })

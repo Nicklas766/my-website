@@ -3,20 +3,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
-
 import {AcceptableBody} from "./AcceptableBody.model";
 
 @Injectable()
 export class AdminService {
      constructor(private http: HttpClient) {}
-
-    getAllBlogPosts() {
-        return this.http.get('/api/blog/all').toPromise();
-    }
-    
-    getBlogPostBySlug(slug: string) {
-        return this.http.get('/api/blog/article/' + slug).toPromise();
-    }
 
     postCreateBlogPost(body: AcceptableBody): Promise<AcceptableBody> {
         return this.http.post('/api/blog/create', body).toPromise() as Promise<AcceptableBody>;

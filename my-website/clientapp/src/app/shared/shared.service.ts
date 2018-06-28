@@ -3,17 +3,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
+import { Article } from '../shared/models/article.model';
 
 
 @Injectable()
 export class SharedService {
      constructor(private http: HttpClient) {}
 
-    getAllBlogPosts() {
-        return this.http.get('/api/blog/all').toPromise();
+     getAllArticles() {
+        return this.http.get('/api/blog/all').toPromise() as Promise<Article[]>;
     }
     
-    getBlogPostBySlug(slug: string) {
-        return this.http.get('/api/blog/article/' + slug).toPromise();
+    getArticleBySlug(slug: string) {
+        return this.http.get('/api/blog/article/' + slug).toPromise() as Promise<Article>;
     }
 }

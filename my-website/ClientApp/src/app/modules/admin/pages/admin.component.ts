@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { AdminService } from '../admin.service';
+import { SharedService } from '../../../shared/shared.service';
 
 @Component({
     selector: 'app-admin',
@@ -10,15 +11,18 @@ import { AdminService } from '../admin.service';
 /** admin component*/
 export class AdminComponent {
     /** admin ctor */
-  constructor(private adminService: AdminService) {
+  constructor(
+      private adminService: AdminService,
+      private sharedService: SharedService
+    ) {
 
   }
     public blogPosts: any;
-    public loading: boolean = false;
+    public loading: boolean = true;
     public currentBlogPost: object;
 
     ngOnInit(): void {
-        this.adminService.getAllBlogPosts().then(res => {
+        this.sharedService.getAllArticles().then(res => {
             this.blogPosts = res;
             this.loading = false;
         });   

@@ -1,1 +1,9 @@
 ﻿<div style="border: 1px solid red">articles Component</div>
+
+
+<div *ngIf="!loading">
+<div *ngFor="let article of articles;">
+    <a>{{article.title}}</a>
+  </div>
+</div>
+
