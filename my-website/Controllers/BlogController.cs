@@ -32,7 +32,7 @@ namespace mywebsite.Controllers
                 _context.Add(post);
                 _context.SaveChanges();
             }
-                
+
             return Ok(_context.Posts.ToList());
         }
 
@@ -47,76 +47,8 @@ namespace mywebsite.Controllers
             {
                 return StatusCode(404);
             }
-                
-            return Ok(post);
-        }
-
-
-        // POST api/blog/create
-        [HttpPost("create")]
-        public IActionResult Create([FromBody]CreateAndUpdateBody body)
-        {
-            if (body.Slug == null || !ModelState.IsValid)
-            {
-                return StatusCode(404);
-            }
-
-            Post post  = new Post();
-
-            post.SetAttributes(body);
- 
-            _context.Add(post);
-            _context.SaveChanges();
-            return Ok(post);
-        }
-
-        // PUT api/blog/update
-        [HttpPut("update")]
-        public IActionResult Update([FromBody]CreateAndUpdateBody body)
-        {
-            Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == body.Id);
-
-            if (post == null || !ModelState.IsValid)
-            {
-                return StatusCode(404);
-            }
-
-            post.SetAttributes(body);
-
-            _context.SaveChanges();
 
             return Ok(post);
         }
-
-        // DELETE api/blog/delete
-        [HttpDelete("delete")]
-        public StatusCodeResult Delete(int id)
-        {
-            Post post = _context.Posts.FirstOrDefault(curPost => curPost.ID == id);
-
-            if (post == null)
-            {
-                return StatusCode(404);
-            }
-              
-            post.IsDeleted = true;
-            _context.SaveChanges();
-
-            return StatusCode(200);
-        }
-    }
-
-    public class CreateAndUpdateBody
-    {
-        public int? Id { get; set; }
-
-        [Required]
-        public string Title { get; set; }
-
-        [Required]
-        public string Slug { get; set; }
-
-        [Required]
-        public string Text { get; set; }
     }
 }

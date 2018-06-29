@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 using my_website.Data;
 using Microsoft.EntityFrameworkCore;
+using System;
+
 namespace my_website
 {
     public class Startup
@@ -24,6 +26,16 @@ namespace my_website
         {
             services.AddDbContext<BlogContext>(opt =>
                opt.UseInMemoryDatabase("Blog"));
+
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -50,6 +62,8 @@ namespace my_website
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            app.UseSession();
+
 
             app.UseMvc(routes =>
             {

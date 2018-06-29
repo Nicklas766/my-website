@@ -10,5 +10,6 @@ namespace my_website.Data
         }
 
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }
