@@ -36,12 +36,12 @@ namespace mywebsite.Controllers
 
 
         // POST api/admin/login
-        [HttpGet("login")]
-        public StatusCodeResult postLogin(string username, string password)
+        [HttpPost("login")]
+        public StatusCodeResult postLogin([FromBody]LoginBody body)
         {
-            Admin admin = _context.Admins.FirstOrDefault(curAdmin => curAdmin.Username == username);
+            Admin admin = _context.Admins.FirstOrDefault(curAdmin => curAdmin.Username == body.Username);
 
-            if (admin != null && admin.Password == password)
+            if (admin != null && admin.Password == body.Password)
             {
                 HttpContext.Session.SetString("isAdmin", "yes");
                 return StatusCode(200);
@@ -127,4 +127,12 @@ public class CreateAndUpdateBody
         public string Text { get; set; }
     }
 
+public class LoginBody
+{
+    [Required]
+    public string Username { get; set; }
+
+    [Required]
+    public string Password { get; set; }
+}
 

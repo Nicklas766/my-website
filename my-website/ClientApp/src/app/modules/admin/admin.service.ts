@@ -3,11 +3,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
-import {AcceptableBody} from "./AcceptableBody.model";
+import { AcceptableBody, LoginBody } from "./admin.models";
+
+function handleError(error) {
+    console.log(error)
+  }
 
 @Injectable()
 export class AdminService {
      constructor(private http: HttpClient) {}
+
+    postLoginAsAdmin(body: LoginBody) {
+        return this.http.post('/api/admin/login', body).toPromise()
+    }
 
     postCreateArticle(body: AcceptableBody): Promise<AcceptableBody> {
         return this.http.post('/api/admin/create', body).toPromise() as Promise<AcceptableBody>;

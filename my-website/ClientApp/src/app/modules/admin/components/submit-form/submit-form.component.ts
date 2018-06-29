@@ -1,7 +1,8 @@
 ﻿import { Component, OnInit, Input } from '@angular/core';
 
 import { AdminService } from '../../admin.service'
-import {AcceptableBody} from "../../AcceptableBody.model";
+import { AcceptableBody } from "../../admin.models";
+
 @Component({
     selector: 'app-submit-form',
     templateUrl: './submit-form.component.html',

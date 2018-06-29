@@ -6,7 +6,9 @@ import { RouterModule }     from '@angular/router';
 
 // Components, ALPHABETICAL ORDER
 import { AppComponent }   from './app.component';
+import { LoginFormComponent } from './modules/admin/components/login-form/login-form.component';
 import { SubmitFormComponent } from './modules/admin/components/submit-form/submit-form.component';
+
 
 // Page Components, ALPHABETICAL ORDER
 import { AboutComponent } from './modules/about/pages/about.component';
@@ -27,6 +29,7 @@ import { SharedService }   from './shared/shared.service';
     ArticlesComponent,
     ArticleComponent,
     HomeComponent,
+    LoginFormComponent,
     SubmitFormComponent
   ],
   imports: [
