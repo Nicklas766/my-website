@@ -5,7 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule }     from '@angular/router';
 
 // Components, ALPHABETICAL ORDER
-import { AppComponent }   from './app.component';
+import { AppComponent } from './app.component';
+import { AlertMessageComponent } from './shared/components/alert-message/alert-message.component';
 import { LoginFormComponent } from './modules/admin/components/login-form/login-form.component';
 import { SubmitFormComponent } from './modules/admin/components/submit-form/submit-form.component';
 
@@ -26,6 +27,7 @@ import { SharedService }   from './shared/shared.service';
     AppComponent,
     AboutComponent,
     AdminComponent,
+    AlertMessageComponent,
     ArticlesComponent,
     ArticleComponent,
     HomeComponent,

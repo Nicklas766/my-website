@@ -1,9 +1,9 @@
-<div style="border: 1px solid red">Login-Form Component</div>
-
 <li>Username</li>
 <input [(ngModel)]="username"> 
 
 <li>Password {{password}}</li>
 <input [(ngModel)]="password"> 
 
-<button (click)="loginAsAdmin()">LOGIN</button> 
+<button [style.background]="'red'" (click)="loginAsAdmin()">LOGIN</button> 
+
+<app-alert-message [(isVisible)]="showAlertMessage" [type]="alertType">{{alertText}}</app-alert-message>

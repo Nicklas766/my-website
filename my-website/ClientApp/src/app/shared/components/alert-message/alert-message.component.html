@@ -1,0 +1,5 @@
+<div *ngIf="isVisible" [ngClass]="type + ' shake'">
+    <strong>{{type}}:</strong>
+    <span><ng-content></ng-content></span>
+    <i (click)="hide()" class="fas fa-times"></i>
+</div>

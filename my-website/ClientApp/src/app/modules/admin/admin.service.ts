@@ -5,10 +5,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { AcceptableBody, LoginBody } from "./admin.models";
 
-function handleError(error) {
-    console.log(error)
-  }
-
 @Injectable()
 export class AdminService {
      constructor(private http: HttpClient) {}

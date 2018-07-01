@@ -13,23 +13,24 @@ export class LoginFormComponent {
 
     public username: string;
     public password: string;
+    public showAlertMessage: boolean = true;
+    public alertType: string = "info"
+    public alertText: string = "Hi! This is the admin page, just so you know.";
     
     constructor(private adminService: AdminService) {}
 
+    setAndShowAlertMessage(type, text) {
+        this.showAlertMessage = true;
+        this.alertType = type;
+        this.alertText = text;
+    }
+    
     loginAsAdmin() {
         this.adminService.postLoginAsAdmin({
             username: this.username,
             password: this.password
-        }).then(res => {
-
-            console.log("logged")
-
-        }).catch(err => {
-
-            if (err.status == 404) {
-                console.log("failed login");
-            }
-            console.log(err)
-        });  
+        })
+        .then(res => this.setAndShowAlertMessage("success", "You have logged in!"))
+        .catch(err => this.setAndShowAlertMessage("error", "Login failed, you probably shouldn't be here..."));  
     }
 }

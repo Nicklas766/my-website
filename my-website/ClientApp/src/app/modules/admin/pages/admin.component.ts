@@ -12,10 +12,7 @@ import { Article } from '../../../shared/models/article.model';
 /** admin component*/
 export class AdminComponent {
     /** admin ctor */
-  constructor(
-      private adminService: AdminService,
-      private sharedService: SharedService
-    ) { }
+  constructor(private sharedService: SharedService) { }
 
     public articles: Article[];
     public loading: boolean = true;
