@@ -6,3 +6,6 @@ This will be my personal website. It is a single-page application, built with:
 
 
 More will be added here later
+
+
+Unittests uses a inMemory database, while the production code does not.

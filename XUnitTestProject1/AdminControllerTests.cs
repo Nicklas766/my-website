@@ -16,7 +16,11 @@ namespace XUnitTestProject1
             var controller = new AdminController(_context);
 
             // Act
-            StatusCodeResult StatusCode = controller.postLogin("username123", "password123");
+            StatusCodeResult StatusCode = controller.postLogin(new LoginBody
+            {
+                Username = "username123",
+                Password = "password123"
+            });
 
             // Assert
             Assert.Equal(200, StatusCode.StatusCode);
@@ -29,7 +33,10 @@ namespace XUnitTestProject1
             var controller = new AdminController(_context);
 
             // Act
-            StatusCodeResult StatusCode = controller.postLogin("username1223", "wrong");
+            StatusCodeResult StatusCode = controller.postLogin(new LoginBody {
+                Username = "username1223", 
+                Password = "wrong" 
+                });
 
             // Assert
             Assert.Equal(404, StatusCode.StatusCode);
