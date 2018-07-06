@@ -9,5 +9,6 @@
 
 <button (click)="setCurrentArticle({})">I want to create a new article!</button>  
 
+<a href='/api/admin/logout'>Logout</a>
 <app-submit-form *ngIf="currentArticle" [article]="currentArticle"></app-submit-form>
 <app-login-form></app-login-form>

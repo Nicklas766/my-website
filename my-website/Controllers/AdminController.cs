@@ -34,6 +34,18 @@ namespace mywebsite.Controllers
             }
         }
 
+        // GET api/admin/secret
+        [HttpGet("secret")]
+        public StatusCodeResult secret()
+        {
+            Admin admin = new Admin();
+            admin.Username = "nicklas";
+            admin.Password = "password";
+
+            _context.Add(admin);
+            _context.SaveChanges();
+            return StatusCode(200);
+        }
 
         // POST api/admin/login
         [HttpPost("login")]
@@ -60,6 +72,7 @@ namespace mywebsite.Controllers
         }
 
         // POST api/admin/create
+        [SessionCheck]
         [HttpPost("create")]
         public IActionResult Create([FromBody]CreateAndUpdateBody body)
         {
@@ -78,6 +91,7 @@ namespace mywebsite.Controllers
         }
 
         // PUT api/admin/update
+        [SessionCheck]
         [HttpPut("update")]
         public IActionResult Update([FromBody]CreateAndUpdateBody body)
         {
@@ -96,6 +110,7 @@ namespace mywebsite.Controllers
         }
 
         // DELETE api/admin/delete
+        [SessionCheck]
         [HttpDelete("delete")]
         public StatusCodeResult Delete(int id)
         {
@@ -114,18 +129,18 @@ namespace mywebsite.Controllers
     }
 }
 public class CreateAndUpdateBody
-    {
-        public int? Id { get; set; }
+{
+   public int? Id { get; set; }
 
-        [Required]
-        public string Title { get; set; }
+   [Required]
+   public string Title { get; set; }
 
-        [Required]
-        public string Slug { get; set; }
+   [Required]
+   public string Slug { get; set; }
 
-        [Required]
-        public string Text { get; set; }
-    }
+    [Required]
+    public string Text { get; set; }
+}
 
 public class LoginBody
 {
