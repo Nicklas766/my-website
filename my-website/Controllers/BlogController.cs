@@ -22,17 +22,6 @@ namespace mywebsite.Controllers
         [HttpGet("all")]
         public IActionResult GetAll()
         {
-            if (_context.Posts.ToList().Count == 0)
-            {
-                Post post = new Post();
-                post.Title = "title";
-                post.Slug = "slug";
-                post.Text = "text here";
-
-                _context.Add(post);
-                _context.SaveChanges();
-            }
-
             return Ok(_context.Posts.ToList());
         }
 
