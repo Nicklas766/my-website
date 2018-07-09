@@ -1,32 +1,20 @@
-import { Component } from '@angular/core';
-
-import { AdminService } from '../admin.service';
-import { SharedService } from '../../../shared/shared.service';
-import { Article } from '../../../shared/models/article.model';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from "@angular/router";
+import { AdminService } from '..//admin.service'
+import { HttpClient } from '@angular/common/http';
+import { AdminAuthGuard }   from '../../../shared/AdminAuthGuard.service';
 
 @Component({
     selector: 'app-admin',
-    templateUrl: './admin.component.html',
-    styleUrls: ['./admin.component.scss']
+    template: '<app-login-form></app-login-form>'
 })
-/** admin component*/
+
 export class AdminComponent {
-    /** admin ctor */
-  constructor(private sharedService: SharedService) { }
-
-    public articles: Article[];
-    public loading: boolean = true;
-    public currentArticle: Article;
-
-    ngOnInit(): void {
-        this.sharedService.getAllArticles().then(res => {
-            this.articles = res;
-            this.loading = false;
-        });   
-  }
-
-  setCurrentArticle(currentArticle: Article) {
-        console.log(currentArticle)
-        this.currentArticle = currentArticle;
-  }
+ 
+    constructor(
+        private adminService: AdminService, 
+        private adminAuthGuard: AdminAuthGuard,
+    ) {
+        this.adminAuthGuard.redirectIfLogged();  
+    }
 }

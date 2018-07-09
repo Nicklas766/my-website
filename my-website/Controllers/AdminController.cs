@@ -28,7 +28,6 @@ namespace mywebsite.Controllers
             {
                 var session = filterContext.HttpContext.Session;
                 bool isLoggedAsAdmin = !string.IsNullOrEmpty(session.GetString("isAdmin"));
-               
                 if (!isLoggedAsAdmin)
                     filterContext.Result = new BadRequestObjectResult("Access denied!");
             }
@@ -45,6 +44,21 @@ namespace mywebsite.Controllers
             _context.Add(admin);
             _context.SaveChanges();
             return StatusCode(200);
+        }
+
+        // GET api/admin/session
+        [HttpGet("isLoggedAsAdmin")]
+        public StatusCodeResult isLogged()
+        {
+            var session = HttpContext.Session;
+            bool isLoggedAsAdmin = !string.IsNullOrEmpty(session.GetString("isAdmin"));
+
+            if (isLoggedAsAdmin)
+            {
+                return StatusCode(200);
+            };
+
+            return StatusCode(404);
         }
 
         // POST api/admin/login

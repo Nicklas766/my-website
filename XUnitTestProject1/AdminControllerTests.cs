@@ -163,5 +163,21 @@ namespace XUnitTestProject1
             Assert.Equal(404, statusCodeResult.StatusCode);
         }
 
+
+        [Fact]
+        public void Test9_IsLogged_ShouldReturnFalse()
+        {
+            // Arrange
+            var controller = new AdminController(_context);
+
+            // Act
+            IActionResult actionResult = controller.isLogged();
+
+            var statusCodeResult = Assert.IsType<StatusCodeResult>(actionResult);
+
+            // Assert
+            Assert.Equal(404, statusCodeResult.StatusCode);
+        }
+
     }
 }
