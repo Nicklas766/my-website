@@ -4,6 +4,9 @@ import { FormsModule }      from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, CanActivate }     from '@angular/router';
 
+// NPM
+import { MarkdownModule } from 'angular2-markdown';
+
 // Components, ALPHABETICAL ORDER
 import { AppComponent } from './app.component';
 import { AlertMessageComponent } from './shared/components/alert-message/alert-message.component';
@@ -43,6 +46,7 @@ import { SharedService }   from './shared/shared.service';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    MarkdownModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
