@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 /** about component*/
 export class AboutComponent {
-    public testText: string = "About page";
     /** about ctor */
     constructor() {}
 
