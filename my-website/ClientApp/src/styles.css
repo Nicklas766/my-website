@@ -20,3 +20,9 @@ p {
 a {
     font-family: 'Roboto', sans-serif;
 }
+
+pre {
+    padding: 16px;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+  }

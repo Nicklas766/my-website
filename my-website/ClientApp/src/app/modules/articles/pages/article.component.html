@@ -1,10 +1,10 @@
-﻿<div style="border: 1px solid red">article Component</div>
+﻿<div *ngIf="!loading">
 
-
-<div *ngIf="!loading">
-
+<div style="text-align:center;">
     <h1>{{article.title}}</h1>
-    
+    <p>Nicklas | <i class="far fa-clock"></i> {{publishDateString}}</p>
+</div>
+
 <markdown>
     {{article.text}}
 </markdown>
