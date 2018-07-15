@@ -15,17 +15,27 @@ export class ArticlesComponent {
     public articles: Article[];
     public loading: boolean = true;
     public currentArticle: Article;
+    public searchString: string = "";
     /** articles ctor */
     constructor(private sharedService: SharedService) {
 
     }
 
     ngOnInit(): void {
-        this.sharedService.getAllArticles().then(res => {
+        this.getArticles();
+    }
+
+    getArticles() {
+        return this.sharedService.getAllArticles().then(res => {
             this.articles = res;
             this.loading = false;
         });   
-  }
+    }
+    async searchForArticles() {
+        await this.getArticles();
+        const lowerCaseSearch = this.searchString.toLowerCase();
+        this.articles = this.articles.filter(article => article.title.toLowerCase().includes(lowerCaseSearch))
+    }
 
 
 }

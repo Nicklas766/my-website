@@ -1,0 +1,41 @@
+@import "../../../shared/styles/shared.scss";
+
+:host {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.article {
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 10px;
+    border: solid 1px silver;
+   
+    img {
+        width: 25%;
+        height: 100px;
+    }
+
+    h3 {
+        margin: 0;
+    }
+}
+
+.article:hover {
+    box-shadow: inset 1px 1px 2px 1px black;
+}
+
+
+
+
+

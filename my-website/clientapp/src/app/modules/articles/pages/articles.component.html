@@ -1,9 +1,31 @@
-﻿<div style="border: 1px solid red">articles Component</div>
+﻿
+
+<div *ngIf="loading">
+  Loading...
+</div>
 
 
-<div *ngIf="!loading">
-<div *ngFor="let article of articles;">
-    <a [routerLink]='["/article/" + article.slug]'>{{article.title}}</a>
-  </div>
+
+<div class="search-bar">
+  <span></span>
+  <input [(ngModel)]="searchString" placeholder="Search for an article">
+  <div class="search-button" (click)="searchForArticles()"><i class="fas fa-search"></i></div>
+</div>
+
+
+<div class="article-container" *ngIf="!loading">
+  
+  <h1 *ngIf="articles.length == 0"> No articles found :( </h1>
+  <a class="article" [routerLink]='["/article/" + article.slug]' *ngFor="let article of articles;">
+
+    <img src="https://www.baenegocios.com/__export/1517000694769/sites/cronica/img/2018/01/26/genis.jpg_541755376.jpg">
+    <div>
+      <h3>{{article.title}}</h3>
+      <p><i class="far fa-clock"></i>{{article.publishDate}}</p>
+    </div>
+
+
+  </a>
+
 </div>
 

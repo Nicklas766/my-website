@@ -1,4 +1,4 @@
-
+@import "shared/styles/shared.scss";
 
 .wrap-all {
   height: 100%;
@@ -60,6 +60,36 @@
 
 }
 
+.search-bar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+  background: #EBEBEB;
+  justify-content: center;
+
+  span {
+      width: 2%;
+  }
+  
+  input {
+      width: 90%;
+      border: none;
+      padding: 0;
+      background: #EBEBEB;
+      font-size: 0.9em;
+      color: #665;
+  }
+  
+  .search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 7%;
+      color: #665;
+      cursor: pointer;
+  }
+}
 
 .container {
   width: 50%;
