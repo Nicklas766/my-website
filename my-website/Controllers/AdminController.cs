@@ -22,16 +22,6 @@ namespace mywebsite.Controllers
         {
             _context = context;
         }
-        public class SessionCheck : ActionFilterAttribute
-        {
-            public override void OnActionExecuting(ActionExecutingContext filterContext)
-            {
-                var session = filterContext.HttpContext.Session;
-                bool isLoggedAsAdmin = !string.IsNullOrEmpty(session.GetString("isAdmin"));
-                if (!isLoggedAsAdmin)
-                    filterContext.Result = new BadRequestObjectResult("Access denied!");
-            }
-        }
 
         // GET api/admin/secret
         [HttpGet("secret")]
@@ -77,7 +67,7 @@ namespace mywebsite.Controllers
         }
 
         // GET api/admin/logout
-        [SessionCheck]
+        [Filters.AuthorizeAdmin]
         [HttpGet("logout")]
         public StatusCodeResult getLogout()
         {
@@ -86,7 +76,7 @@ namespace mywebsite.Controllers
         }
 
         // POST api/admin/create
-        [SessionCheck]
+        [Filters.AuthorizeAdmin]
         [HttpPost("create")]
         public IActionResult Create([FromBody]CreateAndUpdateBody body)
         {
@@ -105,7 +95,7 @@ namespace mywebsite.Controllers
         }
 
         // PUT api/admin/update
-        [SessionCheck]
+        [Filters.AuthorizeAdmin]
         [HttpPut("update")]
         public IActionResult Update([FromBody]CreateAndUpdateBody body)
         {
@@ -124,7 +114,7 @@ namespace mywebsite.Controllers
         }
 
         // DELETE api/admin/delete
-        [SessionCheck]
+        [Filters.AuthorizeAdmin]
         [HttpDelete("delete")]
         public StatusCodeResult Delete(int id)
         {
@@ -152,8 +142,8 @@ public class CreateAndUpdateBody
    [Required]
    public string Slug { get; set; }
 
-    [Required]
-    public string Text { get; set; }
+   [Required]
+   public string Text { get; set; }
 }
 
 public class LoginBody
