@@ -1,14 +1,12 @@
 ﻿<div *ngIf="!loading">
 
-<div style="text-align:center;">
-    <h1>{{article.title}}</h1>
-    <p>Nicklas | <i class="far fa-clock"></i> {{publishDateString}}</p>
-</div>
+    <div style="text-align:center;">
+        <h1>{{article.title}}</h1>
+        <p>Nicklas | <i class="far fa-clock"></i> {{publishDateString}}</p>
+    </div>
 
-<markdown>
-    {{article.text}}
-</markdown>
-
-
+    <markdown>
+        {{article.text}}
+    </markdown>
 </div>
 

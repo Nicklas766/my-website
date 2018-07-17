@@ -9,19 +9,18 @@
   width: 100%;
   margin: auto;
   text-align: center;
-  background: white;
+  background: #A1CAC8;
 }
 
 .navbar-wrapper {
   width: 100%;
-  border-bottom: solid 1px #959393;
   display: flex;
   flex-wrap: wrap;
+
   .home a {
     font-family: 'Lora', serif;
   }
   .home {
-    width: 25%;
     font-size: 1.75em;
     font-weight: bold;
     padding: 10px;
@@ -29,33 +28,31 @@
     
 
     a {
-      color: #2F2F2F;
+      color: #4d575a;
     }
 
   }
 
   a {
-    background: white;
     padding: 20px;
     text-decoration: none;
-    color: #959393;
+    color: white;
   }
   a:hover {
     text-decoration: underline;
-    color: #2F2F2F;
+    color: #4d575a;
   }
 
   .link-active {
-    color: #2F2F2F;
+    color: #4d575a;
   }
   .navbar {
     width: 50%;
+    margin: auto;
     display: flex;
-    background: white;
     align-items: center;
-   
-    
-  
+    justify-content: center;
+
   }
 
 }
@@ -94,7 +91,7 @@
 .container {
   width: 50%;
   margin: auto;
-  background: white;
+  background: #A1CAC8;
   padding: 10px;
   border-radius: 0.3em;
 }

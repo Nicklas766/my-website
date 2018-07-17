@@ -6,11 +6,7 @@
       
     <div class="navbar-wrapper">
 
-      <div class="home">
-        <a [routerLink]='["/"]' [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-          Nicklas Envall 
-        </a>
-      </div>
+
 
       <div class="navbar">
 
@@ -20,6 +16,11 @@
         <a [routerLink]='["/articles"]' [routerLinkActive]='["link-active"]'>
           <i class="far fa-newspaper"></i> Articles
         </a>
+        <div class="home">
+            <a [routerLink]='["/"]' [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+              Nicklas Envall 
+            </a>
+          </div>
         <!-- <a [routerLink]='["/about"]' [routerLinkActive]='["link-active"]'>
           <i class="fas fa-book"></i> Book reviews
         </a> -->
