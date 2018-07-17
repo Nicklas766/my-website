@@ -3,6 +3,8 @@ import { NgModule }         from '@angular/core';
 import { FormsModule }      from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, CanActivate }     from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 // NPM
 import { MarkdownModule } from 'angular2-markdown';
@@ -12,6 +14,8 @@ import { AppComponent } from './app.component';
 import { AlertMessageComponent } from './shared/components/alert-message/alert-message.component';
 import { LoginFormComponent } from './modules/admin/components/login-form/login-form.component';
 import { SubmitFormComponent } from './modules/admin/components/submit-form/submit-form.component';
+import { SwipeContainerComponent } from './shared/components/swipe-component/swipe.component';
+import { SwipeChildComponent } from './shared/components/swipe-component/swipeChild.component';
 
 // Page Components, ALPHABETICAL ORDER
 import { AboutComponent } from './modules/about/pages/about.component';
@@ -39,10 +43,14 @@ import { SharedService }   from './shared/shared.service';
     HomeComponent,
     LoginFormComponent,
     ProjectsComponent,
-    SubmitFormComponent
+    SubmitFormComponent,
+    SwipeContainerComponent,
+    SwipeChildComponent
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     MarkdownModule.forRoot(),

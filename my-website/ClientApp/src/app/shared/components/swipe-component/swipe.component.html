@@ -1,0 +1,17 @@
+
+<!-- Arrow holder for left -->
+<div (click)='moveLeft()' class='arrow-holder'>
+     <i class="fal fa-angle-left"></i>
+</div>
+
+<!-- Swipe element -->
+<div class='child-container' (touchstart)="touchDown($event)" (touchend)="touchEnd($event)" (touchmove)="touchMove($event)">
+    <ng-content></ng-content>
+</div>
+
+<!-- Arrow holder for right -->
+<div (click)='moveRight()' class='arrow-holder' style="right:0;">
+    <i class="fal fa-angle-right"></i>
+</div>
+
+
