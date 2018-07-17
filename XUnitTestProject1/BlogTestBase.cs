@@ -20,6 +20,7 @@ namespace XUnitTestProject1
             var serviceProvider = new ServiceCollection()
                 .AddEntityFrameworkInMemoryDatabase()
                 .AddDistributedMemoryCache()
+        
 
                 .BuildServiceProvider();
       
@@ -40,7 +41,6 @@ namespace XUnitTestProject1
             _context.Add(new Admin { Username = "username123", Password = "password123" });
             _context.SaveChanges();
         }
-
 
         public void Dispose()
         {

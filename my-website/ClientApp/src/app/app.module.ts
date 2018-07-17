@@ -20,9 +20,7 @@ import { AdminDashboardComponent } from './modules/admin/pages/dashboard.compone
 import { ArticlesComponent } from './modules/articles/pages/articles.component';
 import { ArticleComponent } from './modules/articles/pages/article.component';
 import { HomeComponent }  from './modules/home/home.component';
-
-
-
+import { ProjectsComponent }  from './modules/projects/projects.component';
 
 // Services, ALPHABETICAL
 import { AdminService }   from './modules/admin/admin.service';
@@ -40,6 +38,7 @@ import { SharedService }   from './shared/shared.service';
     ArticleComponent,
     HomeComponent,
     LoginFormComponent,
+    ProjectsComponent,
     SubmitFormComponent
   ],
   imports: [
@@ -54,6 +53,7 @@ import { SharedService }   from './shared/shared.service';
       { canActivate: [AdminAuthGuard], path: 'admin/dashboard', component: AdminDashboardComponent },
       { path: 'articles', component: ArticlesComponent },
       { path: 'article/:slug', component: ArticleComponent },
+      { path: 'projects', component: ProjectsComponent },
     ])
   ],
     providers: [

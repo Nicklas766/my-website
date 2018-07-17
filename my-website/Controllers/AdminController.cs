@@ -16,6 +16,8 @@ namespace mywebsite.Controllers
     [Route("api/[controller]")]
     public class AdminController : Controller
     {
+
+ 
         private readonly BlogContext _context;
 
         public AdminController(BlogContext context)
