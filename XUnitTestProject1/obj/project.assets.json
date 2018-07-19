@@ -3734,7 +3734,6 @@
           "Microsoft.AspNetCore.SpaServices.Extensions": "2.1.0",
           "Microsoft.EntityFrameworkCore.InMemory": "2.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.0",
-          "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "2.1.1",
           "Moq": "4.9.0"
@@ -10798,37 +10797,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nicklas\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/nicklas/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nicklas\\projects\\my-website\\XUnitTestProject1\\XUnitTestProject1.csproj",
+      "projectUniqueName": "/Users/nicklas/projects/my-website/XUnitTestProject1/XUnitTestProject1.csproj",
       "projectName": "XUnitTestProject1",
-      "projectPath": "C:\\Users\\Nicklas\\projects\\my-website\\XUnitTestProject1\\XUnitTestProject1.csproj",
-      "packagesPath": "C:\\Users\\Nicklas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nicklas\\projects\\my-website\\XUnitTestProject1\\obj\\",
+      "projectPath": "/Users/nicklas/projects/my-website/XUnitTestProject1/XUnitTestProject1.csproj",
+      "packagesPath": "/Users/nicklas/.nuget/packages/",
+      "outputPath": "/Users/nicklas/projects/my-website/XUnitTestProject1/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nicklas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/nicklas/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Nicklas\\projects\\my-website\\my-website\\my-website.csproj": {
-              "projectPath": "C:\\Users\\Nicklas\\projects\\my-website\\my-website\\my-website.csproj"
+            "/Users/nicklas/projects/my-website/my-website/my-website.csproj": {
+              "projectPath": "/Users/nicklas/projects/my-website/my-website/my-website.csproj"
             }
           }
         }
@@ -10842,22 +10839,23 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Microsoft.NETCore.App": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "2.1.0",
+            "autoReferenced": true
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
-            "version": "[15.7.2, )"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "[2.1.0, )",
-            "autoReferenced": true
+            "version": "15.7.2"
           },
           "xunit": {
             "target": "Package",
-            "version": "[2.3.1, )"
+            "version": "2.3.1"
           },
           "xunit.runner.visualstudio": {
             "target": "Package",
-            "version": "[2.3.1, )"
+            "version": "2.3.1"
           }
         },
         "imports": [
