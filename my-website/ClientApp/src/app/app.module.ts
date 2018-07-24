@@ -24,6 +24,7 @@ import { AdminDashboardComponent } from './modules/admin/pages/dashboard.compone
 import { ArticlesComponent } from './modules/articles/pages/articles.component';
 import { ArticleComponent } from './modules/articles/pages/article.component';
 import { HomeComponent }  from './modules/home/home.component';
+import { LinksComponent }  from './modules/links/links.component';
 import { ProjectsComponent }  from './modules/projects/projects.component';
 
 // Services, ALPHABETICAL
@@ -41,6 +42,7 @@ import { SharedService }   from './shared/shared.service';
     ArticlesComponent,
     ArticleComponent,
     HomeComponent,
+    LinksComponent,
     LoginFormComponent,
     ProjectsComponent,
     SubmitFormComponent,
@@ -62,6 +64,7 @@ import { SharedService }   from './shared/shared.service';
       { path: 'articles', component: ArticlesComponent },
       { path: 'article/:slug', component: ArticleComponent },
       { path: 'projects', component: ProjectsComponent },
+      { path: 'links', component: LinksComponent },
     ])
   ],
     providers: [
