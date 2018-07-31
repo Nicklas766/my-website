@@ -13,6 +13,7 @@ import { MarkdownModule } from 'angular2-markdown';
 // Components, ALPHABETICAL ORDER
 import { AppComponent } from './app.component';
 import { AlertMessageComponent } from './shared/components/alert-message/alert-message.component';
+import { DialogComponent } from './shared/components/dialog/dialog.component';
 import { LoginFormComponent } from './modules/admin/components/login-form/login-form.component';
 import { SubmitFormComponent } from './modules/admin/components/submit-form/submit-form.component';
 import { SwipeContainerComponent } from './shared/components/swipe-component/swipe.component';
@@ -42,6 +43,7 @@ import { SharedService }   from './shared/shared.service';
     AlertMessageComponent,
     ArticlesComponent,
     ArticleComponent,
+    DialogComponent,
     HomeComponent,
     LinksComponent,
     LoginFormComponent,
