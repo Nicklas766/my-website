@@ -3,18 +3,19 @@
     display: flex;
     flex-wrap: wrap;
     height: 50px;
-    background: #EBEBEB;
+    background: white;
     justify-content: center;
-
+  
     span {
         width: 2%;
+        background: white;
     }
     
     input {
         width: 90%;
+        background: white;
         border: none;
         padding: 0;
-        background: #EBEBEB;
         font-size: 0.9em;
         color: #665;
     }
@@ -23,8 +24,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 7%;
+        width: 8%;
         color: #665;
+        background: #EBEBEB;
         cursor: pointer;
     }
-}
+  }

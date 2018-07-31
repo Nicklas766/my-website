@@ -1,11 +1,19 @@
 @import "../../../shared/styles/shared.scss";
 
 :host {
-    width: 80%;
+    width: 50%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
 }
+
+h1 {
+    text-align: center;
+    font-size: 4em;
+    color: white;
+    width: 100%;
+}
+
 
 .article-container {
     display: flex;
