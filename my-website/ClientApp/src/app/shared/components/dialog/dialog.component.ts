@@ -12,8 +12,14 @@ export class DialogComponent {
 
   constructor() { }
 
-  toggleVisible() {
-      this.visible = !this.visible;
+  show() {
+      this.visible = true;
+      console.log("im clicked!22")
+  }
+
+  hide() {
+      this.visible = false;
+      console.log("im clicked!")
   }
 
 

@@ -4,19 +4,97 @@
 
 <div style="width:50%; margin: auto; display: flex; flex-wrap: wrap;">
 
-
+<!-- IDEA HAVE INDEX, BY CLICKIN ON DIV, SHOW WHEEL AND HAVE INDEX, SO YOU CAN SCROLL THROUGH ALL  -->
 
 <div style="width:48%; margin: 0 1%; height:100%; background:white; position: relative;">
    <img src="assets/bar.png" style="width:100%; height: 200px; margin-top: 0;">
-   <p> Game</p>
+   <p>Game</p>
     <app-dialog>
-        hwello
+        <shop-swipe-container [style.height]="'400px'" style="background:white; width:100%; margin:auto;">
+
+            <shop-swipe-child [style.width]="'100%'" [key]="0">
+                <img src="assets/bar.png">
+            </shop-swipe-child>
+
+            <shop-swipe-child [style.width]="'100%'" [key]="1">
+                <video width="100%" height="100%" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </shop-swipe-child>
+
+        </shop-swipe-container>
+
+        <table>
+            <tr>
+                <th>Tools/Technologies</th>
+                <th>Test</th>
+                <th>CI</th>
+            </tr>
+            <tr>
+                <td>Express.js</td>
+                <td>Mocha</td>
+                <td>Travis</td>
+            </tr>
+            <tr>
+                <td>React</td>
+                <td>nyc</td>
+                <td>Scrutinizer</td>
+            </tr>
+            <tr>
+                <td>MongoDB</td>
+                <td>eslint</td>
+                <td>CodeClimate</td>
+            </tr>
+            <tr>
+                <td>Socket.io</td>
+                <td>supertest</td>
+            </tr>
+
+        </table>
+
+        <p> This was developed for a school project at Blekinge Institute of Technology.
+            The project is briefly aimed at thinking as a technical architect and team leader who will introduce new technologies
+            and guidelines to their team.
+
+        </p>
+            <p>A school project, using sockets to create a 2 player versus 1 boss game.</p>
+        <p>For a more elborative description please read https://github.com/Nicklas766/bth-team-app, it is however written in Swedish.</p>
+
    </app-dialog>
 </div>
 
-<div style="width:48%; margin: 0 1%; height:100%; background:white;  ">
+<div style="width:48%; margin: 0 1%; height:100%; background:white;">
     <img src="assets/gamification.jpg" style="width:100%; height: 200px; margin-top: 0;">
     <p>Gamification</p>
+
+    <app-dialog>
+
+        <shop-swipe-container [style.height]="'400px'" style="background:white; width:100%; margin:auto;">
+
+            <shop-swipe-child [style.width]="'100%'" [key]="0">
+                <img src="assets/bar.png">
+            </shop-swipe-child>
+
+            <shop-swipe-child [style.width]="'100%'" [key]="1">
+                <video width="100%" height="100%" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </shop-swipe-child>
+
+        </shop-swipe-container>
+
+
+        <p>
+            Is Gamification Useful for Increasing Customer Feedback?: A case study based on people’s perception of gamified elements?
+        </p>
+            <p>Well I was determined to find out, I conducted my research aligned with a course at while researching/developing it at Inkamisu</p>
+        <p>Check it out at http://bth.diva-portal.org/smash/record.jsf?pid=diva2%3A1217314&dswid=4069 or http://bth.diva-portal.org/smash/get/diva2:1217314/FULLTEXT02.pdf</p>
+
+   </app-dialog>
 </div>
 
 

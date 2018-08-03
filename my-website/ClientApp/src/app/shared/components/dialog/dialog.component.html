@@ -1,9 +1,11 @@
-<div (click)="toggleVisible()" style="position: absolute; height:100%; width:100%; top:0; cursor: pointer;">
-
-    <div *ngIf="visible" class="popup">
-        <p>I'm visible!</p>
-        <ng-content></ng-content>
-    </div>
+<div (click)="show()" style="position: absolute; height:100%; width:100%; top:0; cursor: pointer;">
 
 
+
+</div>
+
+
+<div *ngIf="visible" class="popup">
+    <button (click)="hide()">hide me!</button>
+    <ng-content></ng-content>
 </div>
