@@ -1,17 +1,30 @@
 
 .home-background {
-  min-height: 600px;
+
+  background: #A1CAC8;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   text-align: center;
   color: white;
+  height: 500px;
+  border-right: solid 1px #e9e9e9;
+  border-left: solid 1px #e9e9e9;
+  
 
   i {
+    width: 100%;
     margin: 0 5%;
     font-size: 3em;
   }
 
   h1 {
-    font-size: 3em;
+    width: 100%;
+    font-size: 5em;
     letter-spacing: 2px;
+    color: white;
   }
 }
 
