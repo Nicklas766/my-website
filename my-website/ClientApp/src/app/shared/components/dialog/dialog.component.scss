@@ -5,6 +5,21 @@
     top: 0;
     left: 0;
     width: 50%;
-    height: 50%;
-    background: blue;
+    background: white;
+    z-index: 90;
+    border-radius: 0.2em;
+    padding: 10px;
+}
+
+
+.close {
+    width: 100%;
+    font-size: 2em;
+    height: 40px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: grey;
 }
