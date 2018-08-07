@@ -18,11 +18,20 @@ namespace my_website.Models
         public DateTime PublishDate { get; set; }
         public DateTime UpdatedDate { get; set; }
 
+        private bool isPublishDateSet()
+        {
+            return this.PublishDate != DateTime.MinValue;
+        }
         public void SetAttributes(CreateAndUpdateBody body)
         {
-            this.Slug = Slugify(body.Slug);
-            this.Title = body.Title;
-            this.Text = body.Text;
+            Slug = Slugify(body.Slug);
+            Title = body.Title;
+            Text = body.Text;
+
+            if (isPublishDateSet())
+                UpdatedDate = DateTime.Now;
+            else
+                PublishDate = DateTime.Now;
         }
 
         public static string Slugify(string phrase)

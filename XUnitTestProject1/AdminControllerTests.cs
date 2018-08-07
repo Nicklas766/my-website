@@ -10,8 +10,24 @@ namespace XUnitTestProject1
 {
     public class AdminControllerTests : BlogTestBase
     {
+
         [Fact]
-        public void Test1_Login_ShouldPass()
+        public void Test1_IsLogged_ShouldReturnFalse()
+        {
+            // Arrange
+            var controller = new AdminController(_context);
+
+            // Act
+            IActionResult actionResult = controller.isLogged();
+
+            var statusCodeResult = Assert.IsType<StatusCodeResult>(actionResult);
+
+            // Assert
+            Assert.Equal(404, statusCodeResult.StatusCode);
+        }
+
+        [Fact]
+        public void Test2_Login_ShouldPass()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -28,7 +44,7 @@ namespace XUnitTestProject1
         }
 
         [Fact]
-        public void Test2_Login_ShouldFail()
+        public void Test3_Login_ShouldFail()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -45,7 +61,7 @@ namespace XUnitTestProject1
 
 
         [Fact]
-        public void Test3_Logout_ShouldPass()
+        public void Test4_Logout_ShouldPass()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -58,7 +74,7 @@ namespace XUnitTestProject1
         }
 
         [Fact]
-        public void Test4_Create_ShouldPass()
+        public void Test5_Create_ShouldPass()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -83,7 +99,7 @@ namespace XUnitTestProject1
 
         [Fact]
         // Should fail due to lack of slug param
-        public void Test5_Create_ShouldFail()
+        public void Test6_Create_ShouldFail()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -104,7 +120,7 @@ namespace XUnitTestProject1
 
 
         [Fact]
-        public void Test6_Delete()
+        public void Test7_Delete()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -120,7 +136,7 @@ namespace XUnitTestProject1
 
         [Fact]
         // Should change post.text to "im changed", regarding post with id 1
-        public void Test7_Update_ShouldPass()
+        public void Test8_Update_ShouldPass()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -144,7 +160,7 @@ namespace XUnitTestProject1
 
         [Fact]
         // Should fail since no post with id 1234 exists
-        public void Test8_Update_ShouldFail()
+        public void Test9_Update_ShouldFail()
         {
             // Arrange
             var controller = new AdminController(_context);
@@ -165,20 +181,6 @@ namespace XUnitTestProject1
         }
 
 
-        [Fact]
-        public void Test9_IsLogged_ShouldReturnFalse()
-        {
-            // Arrange
-            var controller = new AdminController(_context);
-
-            // Act
-            IActionResult actionResult = controller.isLogged();
-
-            var statusCodeResult = Assert.IsType<StatusCodeResult>(actionResult);
-
-            // Assert
-            Assert.Equal(404, statusCodeResult.StatusCode);
-        }
 
     }
 }
