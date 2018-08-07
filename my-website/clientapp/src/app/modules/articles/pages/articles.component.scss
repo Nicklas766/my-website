@@ -28,6 +28,7 @@ h1 {
     margin-bottom: 1%;
     padding: 10px;
     border: solid 1px silver;
+    text-decoration: none;
    
     img {
         width: 25%;
@@ -36,6 +37,10 @@ h1 {
 
     h3 {
         margin: 0;
+    }
+
+    .text-container {
+        margin-left: 1.5%;
     }
 }
 

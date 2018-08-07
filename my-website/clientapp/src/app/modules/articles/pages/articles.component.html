@@ -21,10 +21,14 @@
   
   <a class="article" [routerLink]='["/article/" + article.slug]' *ngFor="let article of articles;">
     <img src="https://www.baenegocios.com/__export/1517000694769/sites/cronica/img/2018/01/26/genis.jpg_541755376.jpg">
-    <div>
+
+
+    <div class="text-container">
       <h3>{{article.title}}</h3>
       <p><i class="far fa-clock"></i>{{article.publishDate}}</p>
     </div>
+
+
   </a>
 
 </div>

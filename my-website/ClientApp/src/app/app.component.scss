@@ -45,6 +45,44 @@
   border-radius: 0.3em;
 }
 
+/***** TABLET-DEVICES *****/
+@media screen and (min-width: 300px) {
+
+  .wrap-all,
+  .header {
+    width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 1100px) {
+
+  .wrap-all,
+  .header {
+    width: 70%;
+  }
+
+}
+
+@media screen and (min-width: 1300px) {
+
+  .wrap-all,
+  .header {
+    width: 60%;
+  }
+
+}
+
+@media screen and (min-width: 1500px) {
+
+  .wrap-all,
+  .header {
+    width: 50%;
+  }
+
+}
+
+
 
 
 
