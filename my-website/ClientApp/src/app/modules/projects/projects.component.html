@@ -2,33 +2,23 @@
 
 <!-- IDEA HAVE INDEX, BY CLICKIN ON DIV, SHOW WHEEL AND HAVE INDEX, SO YOU CAN SCROLL THROUGH ALL  -->
 
-<div class="widget" style="background-image:url('assets/gamification.jpg')">
+<div class="widget" style="background-image:url('assets/knight-background.jpg')">
    <h1>Game</h1>
 
     <app-dialog>
-            <p> This was developed for a school project at Blekinge Institute of Technology.
-                    The project is briefly aimed at thinking as a technical architect and team leader who will introduce new technologies
-                    and guidelines to their team.
 
-                </p>
-                    <p>A school project, using sockets to create a 2 player versus 1 boss game.</p>
-                <p>For a more elborative description please read https://github.com/Nicklas766/bth-team-app, it is however written in Swedish.</p>
-
-        <shop-swipe-container [style.height]="'400px'" style="background:white; width:100%; margin:auto;">
-
-            <shop-swipe-child [style.width]="'100%'" [key]="0">
-                <img src="assets/bar.png">
-            </shop-swipe-child>
-
-            <shop-swipe-child [style.width]="'100%'" [key]="1">
-                <video width="100%" height="100%" controls>
-                    <source src="movie.mp4" type="video/mp4">
+        <h2>Game</h2>
+            <p> This was developed for a school project at Blekinge Institute of Technology. In this video I display the website/game
+                 I developed. I am using another browser on my 2nd screen which is not visible in the video. The goal is to defeat the 
+                 boss together with another player</p>
+                <video width="100%" height="100%"  onloadstart="this.volume=0.4" controls>
+                    <source src="assets/game.mp4" type="video/mp4">
                     <source src="movie.ogg" type="video/ogg">
                     Your browser does not support the video tag.
                 </video>
-            </shop-swipe-child>
+        
 
-        </shop-swipe-container>
+                <p>For a more elborative description please read more <a href="https://github.com/Nicklas766/bth-team-app" target="_blank">here</a>, it is however written in Swedish.</p>
 
         <table>
             <tr>
@@ -64,11 +54,12 @@
     <h1>Gamification</h1>
 
     <app-dialog>
+        <h2>Gamification</h2>
 
         <shop-swipe-container [style.height]="'400px'" style="background:white; width:100%; margin:auto;">
 
             <shop-swipe-child [style.width]="'100%'" [key]="0">
-                <img src="assets/bar.png">
+                <img src="assets/knight-background.jpg">
             </shop-swipe-child>
 
             <shop-swipe-child [style.width]="'100%'" [key]="1">
