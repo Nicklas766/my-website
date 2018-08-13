@@ -31,10 +31,11 @@ export class ArticlesComponent {
             this.loading = false;
         });   
     }
+
     async searchForArticles() {
         await this.getArticles();
         const lowerCaseSearch = this.searchString.toLowerCase();
-        this.articles = this.articles.filter(article => article.title.toLowerCase().includes(lowerCaseSearch))
+        this.articles = this.articles.filter(article => article.title.toLowerCase().includes(lowerCaseSearch));
     }
 
 

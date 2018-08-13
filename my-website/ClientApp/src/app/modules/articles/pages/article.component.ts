@@ -15,7 +15,6 @@ export class ArticleComponent {
     public loading: boolean = true;
     public article: Article;
     public error: boolean = false;
-    public publishDateString: string;
     /** articles ctor */
     constructor(
         private route: ActivatedRoute,
@@ -31,8 +30,7 @@ export class ArticleComponent {
     const article = await this.sharedService.getArticleBySlug(slug);
     
     this.article = article;
-    const date: Date = new Date(this.article.publishDate);
-    this.publishDateString = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay(); 
+
     this.loading = false;
 }
 }

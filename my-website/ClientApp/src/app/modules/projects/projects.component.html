@@ -50,34 +50,47 @@
    </app-dialog>
 </div>
 
-<div class="widget" style="background-image:url('assets/joystick.jpg')">
+<div class="widget" style="background-image:url('assets/gamepad.jpg')">
     <h1>Gamification</h1>
 
     <app-dialog>
-        <h2>Gamification</h2>
+        <h2>Is Gamification Useful for Increasing Customer Feedback?</h2>
 
-        <shop-swipe-container [style.height]="'400px'" style="background:white; width:100%; margin:auto;">
 
-            <shop-swipe-child [style.width]="'100%'" [key]="0">
-                <img src="assets/knight-background.jpg">
+        <p> The images were used in a survey conducted for the thesis.</p>
+
+        <shop-swipe-container [style.height]="'350px'" style="background:white; width:100%; margin:auto;">
+
+            <shop-swipe-child  [key]="0">
+                <img [style.width]="'50%'" src="assets/step1.png">
             </shop-swipe-child>
 
-            <shop-swipe-child [style.width]="'100%'" [key]="1">
-                <video width="100%" height="100%" controls>
-                    <source src="movie.mp4" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
+            <shop-swipe-child  [key]="1">
+                <img [style.width]="'50%'" src="assets/step2.png">
             </shop-swipe-child>
+
+            <shop-swipe-child  [key]="2">
+                <img [style.width]="'50%'" src="assets/step3.png">
+            </shop-swipe-child>
+
+            <shop-swipe-child  [key]="3">
+                <img [style.width]="'50%'" src="assets/step4.png">
+            </shop-swipe-child>
+
+            
+            <shop-swipe-child  [key]="4">
+                <img [style.width]="'50%'" src="assets/step5.png">
+            </shop-swipe-child>
+
 
         </shop-swipe-container>
 
 
-        <p>
-            Is Gamification Useful for Increasing Customer Feedback?: A case study based on people’s perception of gamified elements?
-        </p>
-            <p>Well I was determined to find out, I conducted my research aligned with a course at while researching/developing it at Inkamisu</p>
-        <p>Check it out at http://bth.diva-portal.org/smash/record.jsf?pid=diva2%3A1217314&dswid=4069 or http://bth.diva-portal.org/smash/get/diva2:1217314/FULLTEXT02.pdf</p>
+        <p> Is Gamification Useful for Increasing Customer Feedback?  </p>
+
+        
+            <p>Well I was determined to find out, I conducted a case study based on people’s perception of gamified elements. This was done during a course, at a startup company named Inkamisu.
+                Check it out <a href="http://bth.diva-portal.org/smash/get/diva2:1217314/FULLTEXT02.pdf">here</a> or <a href="http://bth.diva-portal.org/smash/record.jsf?pid=diva2%3A1217314&dswid=4069">here</a></p>
 
    </app-dialog>
 </div>

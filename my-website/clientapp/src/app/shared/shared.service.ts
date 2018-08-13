@@ -11,10 +11,28 @@ export class SharedService {
      constructor(private http: HttpClient) {}
 
      getAllArticles() {
-        return this.http.get('/api/blog/all').toPromise() as Promise<Article[]>;
+        var promise = this.http.get('/api/blog/all').toPromise() as Promise<Article[]>;
+        return promise.then(res => this.getArticlesWithDateStrings(res));
     }
     
     getArticleBySlug(slug: string) {
-        return this.http.get('/api/blog/article/' + slug).toPromise() as Promise<Article>;
+        var promise = this.http.get('/api/blog/article/' + slug).toPromise() as Promise<Article>;
+        return promise.then(res => res = this.getArticleWithDateString(res));
+    }
+
+    getArticleWithDateString(article: Article) {
+        return Object.assign(article, {publishDateString: this.getDateStringWithoutTimeStamp(article.publishDate)})   
+    }
+
+    getArticlesWithDateStrings(articles: Article[]) {
+        return articles.map(obj => this.getArticleWithDateString(obj));
+    }
+    getDateStringWithoutTimeStamp(argDate: Date) {
+        const date: Date = new Date(argDate);
+        var month = ('0' + (date.getMonth() + 1)).slice(-2);
+        var day = ('0' + (date.getDate() + 1)).slice(-2);
+        var year = date.getUTCFullYear();
+    
+        return year + "-" + month + "-" + day; 
     }
 }
