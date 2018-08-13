@@ -26,9 +26,14 @@ h1 {
     width: 100%;
     margin-top: 1%;
     margin-bottom: 1%;
-    padding: 10px;
     border: solid 1px silver;
     text-decoration: none;
+
+    .article-inner-padding {
+        padding: 10px; 
+        width: 100%; 
+        display: flex;
+    }
    
     img {
         width: 25%;
