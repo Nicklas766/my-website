@@ -3,10 +3,6 @@
 
 <h1>Articles</h1>
 
-<div *ngIf="loading">
-  Loading...
-</div>
-
 
 
 <div class="search-bar">
@@ -14,6 +10,9 @@
   <input [(ngModel)]="searchString" placeholder="Search for an article">
   <div class="search-button" (click)="searchForArticles()"><i class="fas fa-search"></i></div>
 </div>
+
+
+<div *ngIf="loading" class="loader"></div>
 
 <div class="article-container" *ngIf="!loading">
   
@@ -25,7 +24,7 @@
 
     <div class="text-container">
       <h3>{{article.title}}</h3>
-      <p><i class="far fa-clock"></i>{{article.publishDate}}</p>
+      <p><i class="far fa-clock"></i> {{article.publishDate}}</p>
     </div>
 
 
