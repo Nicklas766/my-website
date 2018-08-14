@@ -23,10 +23,10 @@ namespace XUnitTestProject1
             Post post = new Post { Text = "Hello" };
 
             // Act
-            var result = Post.Slugify("my äwesömë title!!!!");
+            var slug = Post.Slugify("my äwesömë title!!!!");
 
             // Assert
-            Assert.Equal("my-awesome-title", result);
+            Assert.Equal("my-awesome-title", slug);
         }
 
         [Fact]
@@ -39,7 +39,8 @@ namespace XUnitTestProject1
             {
                 Slug = "slug",
                 Title = "my title",
-                Text = "my text"
+                Text = "my text",
+                ImageUrl = "image url"
             };
             // Act
             post.SetAttributes(attributes);

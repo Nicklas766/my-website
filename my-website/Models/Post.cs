@@ -13,6 +13,7 @@ namespace my_website.Models
         public string Slug { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
+        public string ImageUrl { get; set; }
 
         public bool IsDeleted { get; set; } = false;
         public DateTime PublishDate { get; set; }
@@ -27,6 +28,7 @@ namespace my_website.Models
             Slug = Slugify(body.Slug);
             Title = body.Title;
             Text = body.Text;
+            ImageUrl = body.ImageUrl;
 
             if (isPublishDateSet())
                 UpdatedDate = DateTime.Now;
