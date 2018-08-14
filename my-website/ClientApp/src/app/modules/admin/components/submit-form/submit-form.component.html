@@ -1,14 +1,17 @@
 ﻿<li>Id: {{article.id}}</li>
 
 <li>Title</li>
-<input [(ngModel)]="article.title"> 
+<input [(ngModel)]="article.title">
 
 <li>Slug</li>
-<input [(ngModel)]="article.slug"> 
+<input [(ngModel)]="article.slug">
+
+<li>Image Url</li>
+<input [(ngModel)]="article.imageUrl">
 
 <li>Text</li>
 <textarea placeholder="Please type your text" [(ngModel)]="article.text"></textarea>
 
-<button *ngIf="!article.id" (click)="createArticle()">CREATE!</button> 
-<button *ngIf="article.id"  (click)="updateArticle()">Update this Article</button> 
-<button *ngIf="article.id"  (click)="deleteArticle()">Delete this Article</button>   
+<button *ngIf="!article.id" (click)="createArticle()">CREATE!</button>
+<button *ngIf="article.id"  (click)="updateArticle()">Update this Article</button>
+<button *ngIf="article.id"  (click)="deleteArticle()">Delete this Article</button>

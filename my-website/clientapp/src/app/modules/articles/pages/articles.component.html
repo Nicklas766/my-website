@@ -15,14 +15,14 @@
 <div *ngIf="loading" class="loader"></div>
 
 <div class="article-container" *ngIf="!loading">
-  
+
   <h1 *ngIf="articles.length == 0"> No articles found :( </h1>
-  
+
   <div style="width: 100%;" *ngFor="let article of articles;">
     <a class="article" *ngIf="!article.isDeleted" [routerLink]='["/article/" + article.slug]'>
 
       <div class="article-inner-padding">
-      <img src="https://www.baenegocios.com/__export/1517000694769/sites/cronica/img/2018/01/26/genis.jpg_541755376.jpg">
+      <img src={{article.imageUrl}}>
 
      <div class="text-container">
        <h3>{{article.title}}</h3>
@@ -34,4 +34,3 @@
 </div>
 
 </div>
-

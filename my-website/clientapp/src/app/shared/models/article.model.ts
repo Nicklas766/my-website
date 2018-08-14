@@ -3,6 +3,7 @@ export class Article {
     title: string;
     slug: string;
     text: string;
+    imageUrl: string;
     isDeleted: boolean;
     publishDate: Date;
     updatedDate: Date;
