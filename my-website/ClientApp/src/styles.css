@@ -8,24 +8,40 @@ html, body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Roboto', sans-serif;
-    color: #A1CAC8;
+  font-family: 'Roboto', sans-serif;
+  color: #76CABE;
 }
-
+h3, h4 {
+  color: rgba(0,0,0,.84);
+}
+h4 {
+  rgba(0,0,0,.84)
+  margin-bottom: 0;
+}
 p {
     letter-spacing: 1px;
     font-family: 'Lora', serif;
-
     color: #4d575a;
+    line-height: 1.5em;
 }
 
 a {
     font-family: 'Roboto', sans-serif;
 }
 
+
+
 pre {
     padding: 16px;
     line-height: 1.45;
     background-color: #f6f8fa;
   }
-  
+
+q,
+li {
+  letter-spacing: 1px;
+  font-family: 'Lora', serif;
+  color: #4d575a;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}

@@ -5,21 +5,17 @@
   flex-wrap: wrap;
 }
 .home-background {
-
-  background: #A1CAC8;
-
+  background: #76CABE;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   width: 100%;
-
   text-align: center;
   color: white;
   height: 500px;
 
-  
+
   p {
     width: 100%;
     margin-top: -250px;
@@ -28,7 +24,6 @@
 
 
   h1 {
-
     font-size: 5em;
     letter-spacing: 2px;
     color: white;
@@ -42,9 +37,9 @@ h2 {
 }
 
 .widget {
-  width: 50%; 
-  height: 350px; 
-  background: #438684;
+  width: 50%;
+  height: 350px;
+  background: #2E8F82;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -57,11 +52,10 @@ h2 {
 
   p {
     color: #A1CAC8;
-
   }
 
   i {
-    color: #A1CAC8;
+    color: #76CABE;
     width: 100%;
     font-size: 4em;
     margin-top: -150px;
