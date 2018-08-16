@@ -1,4 +1,12 @@
-﻿<div *ngIf="!loading">
+
+
+<div *ngIf="loading" style="margin: 5% auto;">
+  <h1>Loading article...</h1>
+  <div class="loader"></div>
+</div>
+
+
+<div *ngIf="!loading">
 
     <div style="text-align:center;">
         <h1>{{article.title}}</h1>
