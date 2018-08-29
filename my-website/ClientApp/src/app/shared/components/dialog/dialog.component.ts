@@ -14,12 +14,10 @@ export class DialogComponent {
 
   show() {
       this.visible = true;
-      console.log("im clicked!22")
   }
 
   hide() {
       this.visible = false;
-      console.log("im clicked!")
   }
 
 

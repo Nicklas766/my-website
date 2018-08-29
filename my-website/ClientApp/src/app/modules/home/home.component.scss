@@ -67,3 +67,9 @@ h2 {
   opacity: 0.9;
 }
 
+
+@media screen and (max-width: 750px) {
+  .widget {
+      width: 100%;
+  }
+}

@@ -6,12 +6,12 @@
     background: white;
     justify-content: center;
     border: solid 1px silver;
-  
+
     span {
         width: 2%;
         background: white;
     }
-    
+
     input {
         width: 90%;
         background: white;
@@ -20,7 +20,7 @@
         font-size: 0.9em;
         color: #665;
     }
-    
+
     .search-button {
         display: flex;
         align-items: center;
@@ -30,5 +30,16 @@
         background: #EBEBEB;
         cursor: pointer;
         border-left: solid 1px silver;
+    }
+  }
+
+
+  @media screen and (max-width: 750px) {
+    .search-button {
+        width: 17.5%;
+    }
+
+    .search-bar input {
+        width: 80%;
     }
   }
