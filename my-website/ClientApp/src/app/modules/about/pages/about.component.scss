@@ -15,3 +15,32 @@ h2 {
 img {
     text-align: center;
 }
+
+
+.info-widget {
+  width: 35%;
+}
+
+.left {
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.right {
+  margin-left: 5%;
+  margin-right: 10%;
+}
+
+@media screen and (max-width: 750px) {
+  .info-widget {
+      width: 80%;
+  }
+
+  .left {
+    margin: auto;
+  }
+
+  .right {
+    margin: auto;
+  }
+}
