@@ -35,11 +35,14 @@
 
 
   @media screen and (max-width: 750px) {
-    .search-button {
-        width: 17.5%;
-    }
 
-    .search-bar input {
+    .search-bar {
+      .search-button {
+        width: 17.5%;
+      }
+
+      input {
         width: 80%;
+      }
     }
-  }
+}

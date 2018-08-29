@@ -42,3 +42,11 @@ li {
   font-size: 0.9em;
   line-height: 1.5em;
 }
+
+
+@media screen and (max-width: 750px) {
+  pre {
+    overflow-x: scroll;
+  }
+
+}
