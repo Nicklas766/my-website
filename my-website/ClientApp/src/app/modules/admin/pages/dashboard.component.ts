@@ -21,6 +21,8 @@ export class AdminDashboardComponent {
     public articles: Article[];
     public loading: boolean = true;
     public currentArticle: Article;
+    public newArticle: Article;
+
 
     ngOnInit(): void {
         this.sharedService.getAllArticles().then(res => {

@@ -1,6 +1,7 @@
 export class AcceptableBody {
     id?: number;
     title: string;
+    imageUrl: string;
     slug: string;
     text: string;
   }

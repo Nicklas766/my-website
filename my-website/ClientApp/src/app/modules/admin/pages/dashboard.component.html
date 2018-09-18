@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<button (click)="setCurrentArticle({})">I want to create a new article!</button>  
+<button (click)="setCurrentArticle(newArticle)">I want to create a new article!</button>  
 
 <button (click)="logout()">Logout</button>
 <app-submit-form *ngIf="currentArticle" [article]="currentArticle"></app-submit-form>
