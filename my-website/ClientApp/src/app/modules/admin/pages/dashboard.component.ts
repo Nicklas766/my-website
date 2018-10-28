@@ -28,7 +28,8 @@ export class AdminDashboardComponent {
         this.sharedService.getAllArticles().then(res => {
             this.articles = res;
             this.loading = false;
-        });   
+        });
+      this.newArticle = new Article;
   }
 
   logout() {
