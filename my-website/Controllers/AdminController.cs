@@ -111,6 +111,7 @@ namespace mywebsite.Controllers
             }
 
             post.SetAttributes(body);
+            post.IsDeleted = false;
 
             _context.SaveChanges();
 
